@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { contactsData } from '../data/mockData';
-import { Phone, Mail, MapPin, PhoneCall, ShieldAlert, Award, Landmark } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldAlert, Award, Landmark } from 'lucide-react';
 
 export default function Contact() {
   const [activeCategory, setActiveCategory] = useState('All');

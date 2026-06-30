@@ -176,33 +176,33 @@ export const contactsData = [
     name: "Rajas Sangekar",
     role: "Vice President, TSG",
     category: "Student Council",
-    phone: "+91-98765-43210",
+    phone: "+91-XXXXX-XXXXX",
     email: "vptsg@hijli.iitkgp.ac.in",
-    location: "Gymkhana Office, TSG"
+    location: "Gymkhana, TSG"
   },
   {
     name: "Aayan Nawaz",
     role: "General Secretary Student Welfare, TSG",
     category: "Student Council",
-    phone: "+91-99887-76655",
+    phone: "+91-XXXXX-XXXXX",
     email: "gsectsg-welfare@hijli.iitkgp.ac.in",
-    location: "Gymkhana Office, TSG"
+    location: "Gymkhana, TSG"
   },
   {
     name: "Mokila Kshitij Reddy",
     role: "General Secretary Student Welfare, TSG",
     category: "Student Council",
-    phone: "+91-99887-76644",
+    phone: "+91-XXXXX-XXXXX",
     email: "gsectsg-welfare@hijli.iitkgp.ac.in",
-    location: "Gymkhana Office, TSG"
+    location: "Gymkhana, TSG"
   },
   {
     name: "Drashti Gala",
     role: "General Secretary Student Welfare, TSG",
     category: "Student Council",
-    phone: "+91-99887-76633",
+    phone: "+91-XXXXX-XXXXX",
     email: "gsectsg-welfare@hijli.iitkgp.ac.in",
-    location: "Gymkhana Office, TSG"
+    location: "Gymkhana, TSG"
   },
   {
     name: "Dr. B. C. Roy Technology Hospital",
