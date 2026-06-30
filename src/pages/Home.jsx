@@ -142,7 +142,7 @@ export default function Home() {
             dismissSplash ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: "url('/kgp-nehru-museum.jpg')",
+            backgroundImage: "url('./kgp-nehru-museum.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
