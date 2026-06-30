@@ -211,14 +211,6 @@ export const contactsData = [
     phone: " 03222281008",
     location: "Near Technology Market, KGP Campus"
   },
-  {
-    name: "Hall Management Centre (HMC)",
-    role: "Hostel Allotment & Mess Services",
-    category: "Institute Administration",
-    phone: "+91-3222-282101",
-    email: "hmc@adm.iitkgp.ac.in",
-    location: "HMC Office, IIT Kharagpur"
-  },
 ];
 
 //Welcome msgs data
