@@ -11,19 +11,19 @@ export default function Home() {
   const [dismissSplash, setDismissSplash] = useState(isSplashSeen);
   const [destroySplash, setDestroySplash] = useState(isSplashSeen);
   
-  // Custom transparent logo url processed on client side
+  //logo url processed on client side
   const [logoUrl, setLogoUrl] = useState('/kgp-logo.png');
 
-  // Selected club for club popup card 
+  //Selected club for club popup card 
   const [selectedClub, setSelectedClub] = useState(null);
 
-  // Active category filter for clubs grid to show the list of all clubs and socities
+  //Active category filter for clubs grid to show the list of all clubs and socities
   const [activeCategory, setActiveCategory] = useState('All');
   
   //Socities and club categories
   const categories = ['All', 'Technical', 'Cultural', 'Welfare', 'Sports'];
 
-  // Hero Section Background Slideshow images object :
+  // Hero Section Background Slideshow images:
   const heroBackgrounds = [
     '/mainbuilding.jpg',
     '/clocktower.jpg',
