@@ -6,7 +6,7 @@ export default function Contact() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   //Contact categories 
-  const categories = ['All', 'Emergency & Medical', 'Student Council', '24/7'];
+  const categories = ['All', 'Emergency & Medical', 'Student Council'];
 
   //Filtering the contacts as per the selected category
   const filteredContacts = contactsData.filter((contact) => {
