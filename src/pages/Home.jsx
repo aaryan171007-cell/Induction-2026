@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { campusHighlights, clubsData, welcomeData } from '../data/mockData';
+import museumBg from '/kgp-nehru-museum.jpg';
 
 export default function Home() {
   // Using a global window property to ensure landing page loads only once when a user arrives on website
@@ -21,7 +22,7 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState('All');
   
   //Socities and club categories
-  const categories = ['All', 'Technical', 'Cultural', 'Welfare', 'Sports'];
+  const categories = ['All', 'Tech', 'Cultural', 'Welfare', 'Sports'];
 
   // Hero Section Background Slideshow images:
   const heroBackgrounds = [
@@ -142,7 +143,7 @@ export default function Home() {
             dismissSplash ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: "url('./kgp-nehru-museum.jpg')",
+            backgroundImage: `url(${museumBg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

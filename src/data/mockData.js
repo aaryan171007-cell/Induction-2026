@@ -36,29 +36,29 @@ export const campusHighlights = [
 
 //Socities pop-up card details
 export const clubsData = [
-  // Technical
+  // Tech
   {
     name: 'Kharagpur Open Source Society (KOSS)',
     description: "The Kharagpur Open Source Society (KOSS) is a community of open source enthusiasts atIIT Kharagpur. We collaborate on innovative open source projects, applying cutting-edge solutions to real-world problems. The community promotes knowledge-sharing and personal growth in a supportive and engaging environment. You can find involvement of KOSS members in MetaKGP, developing on a project  which is helpful for the KGP Community. We are known for conducting technical workshops for sharing knowledge about useful software practices, such as git, python, shell script, linux installation fest.",
-    category: 'Technical',
+    category: 'Tech',
     logoImg: './koss-logo.jpg',
   },
   {
     name: 'Computer Graphics Society',
     description: "CGS at IIT Kharagpur focuses on research in graphics and game development, working on everything from 2D/3D games and VFX to short films and animations, blending creativity with technical expertise. Members explore cutting-edge technologies such as AR/VR, real-time rendering, shader programming, blockchain gaming, and computer vision, often integrating AI/ML workflows into their projects. CGS also organizes Game Jams, workshops, and technical sessions to encourage hands-on learning and collaboration.",
-    category: 'Technical',
+    category: 'Tech',
     logoImg: './cgs-logo.jpg',
   },
   {
     name: 'Kharagpur Data Analytics Group',
     description: "The Kharagpur Data Analytics Group is a vibrant society fueled by passionate data enthusiasts dedicated to advancing the field of data  analytics. Our mission is to share knowledge and expertise in machine learning, artificial intelligence, and data analytics across the entire campus. We achieve this through engaging workshops, exciting hackathons, and by providing valuable resources that empower individuals in the realms of data science and machine learning. The group also collaborates on research-driven projects and publishes technical blogs to encourage continuous learning.",
-    category: 'Technical',
+    category: 'Tech',
     logoImg: './kdag-logo.jpg',
   },
   {
     name: 'Kodein KGP',
     description: "Technology Web3.0 Society is a student-driven tech society at IIT Kharagpur dedicated to solving real-world problems within the campus community using modern technologies. Open to undergraduate freshers and sophomores through a structured selection process, the society is organized into five focused teams: Tech, AI & Metaverse, Blockchain, Design & Media, and Events. KodeinKGP regularly conducts workshops, coding challenges, and design events that promote hands-on learning across domains like AI, Web2.0, Web3.0, Blockchain and UI/UX. Among its many initiatives, the most recent was decodeX, a 10-day open-to-all coding challenge that saw enthusiastic participation from students across multiple institutions.",
-    category: 'Technical',
+    category: 'Tech',
     logoImg: './kik-logo.jpg',
   },
   // Cultural
