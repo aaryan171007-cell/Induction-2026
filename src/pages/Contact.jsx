@@ -5,14 +5,16 @@ import { Phone, Mail, MapPin, PhoneCall, ShieldAlert, Award, Landmark } from 'lu
 export default function Contact() {
   const [activeCategory, setActiveCategory] = useState('All');
 
+  //Contact categories 
   const categories = ['All', 'Emergency & Medical', 'Student Council', '24/7'];
 
+  //Filtering the contacts as per the selected category
   const filteredContacts = contactsData.filter((contact) => {
     const matchesCategory = activeCategory === 'All' || contact.category === activeCategory;
-    const isNotHMC = contact.name !== 'Hall Management Centre (HMC)';
-    return matchesCategory && isNotHMC;
+    return matchesCategory;
   });
 
+  //Assigning individual category icon 
   const getCategoryIcon = (category) => {
     switch (category) {
       case 'Emergency & Medical':
@@ -26,6 +28,7 @@ export default function Contact() {
     }
   };
 
+  //Emergency contacts data
   const emergencyLandlines = [
     { label: 'Security Control Room', numbers: ['03222282751', '03222281002'] },
     { label: 'Quick Response Room', numbers: ['03222281002', '03222281003'] },
@@ -34,22 +37,25 @@ export default function Contact() {
     { label: '24×7 Women Helpline', numbers: ['03222281010'] },
   ];
 
+  //******************************* HTML CODE ***********************************/
   return (
     <div className="w-full min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 grid-bg py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header */}
+        {/******************** Header **********************/}
         <div className="text-center mb-12">
           <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white">
             Key Institute Contacts
           </h1>
+
           <div className="mt-2 h-1.5 w-16 bg-kgp-blue dark:bg-kgp-gold mx-auto rounded-full"></div>
+
           <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Quick directory of emergency lines, hospital services, student gymkhana senate representatives, and administration coordinators.
           </p>
         </div>
 
-        {/* Filter Controls Bar */}
+        {/**************** Filter contacts buttons ******************/}
         <div className="flex items-center justify-center mb-8 bg-white dark:bg-slate-900/60 backdrop-blur-sm p-4 rounded-3xl border border-slate-200/60 dark:border-slate-800/40 shadow-sm max-w-2xl mx-auto">
           <div className="flex flex-wrap gap-1.5 justify-center">
             {categories.map((cat) => (
@@ -68,9 +74,9 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Contacts Grid */}
+        {/*************** Contacts Grid ***************/}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* 1. Standard dynamic cards */}
+          {/***** 1. Standard cards except the last one ******/}
           {filteredContacts.map((contact, idx) => (
             <div
               key={idx}
@@ -79,22 +85,27 @@ export default function Contact() {
               <div>
                 {/* Card Header */}
                 <div className="flex justify-between items-start mb-4">
+
                   <div className="p-2.5 bg-slate-50 dark:bg-slate-800 rounded-xl">
                     {getCategoryIcon(contact.category)}
                   </div>
+
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
                     {contact.category.split(' ')[0]}
                   </span>
+
                 </div>
 
+                {/* Contact's name and role */}
                 <h3 className="font-display font-extrabold text-lg text-slate-900 dark:text-white mb-1 group-hover:text-kgp-blue dark:group-hover:text-kgp-gold transition-colors duration-200">
                   {contact.name}
                 </h3>
+
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-450 mb-5">
                   {contact.role}
                 </p>
 
-                {/* Details */}
+                {/* Contact Details */}
                 <div className="space-y-3.5 text-sm font-normal text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50 pt-4">
                   <div className="flex items-center gap-2.5">
                     <Phone className="h-4 w-4 text-kgp-blue dark:text-kgp-gold" />
@@ -102,6 +113,7 @@ export default function Contact() {
                       {contact.phone}
                     </a>
                   </div>
+
                   {contact.email && (
                     <div className="flex items-center gap-2.5">
                       <Mail className="h-4 w-4 text-kgp-blue dark:text-kgp-gold" />
@@ -110,6 +122,7 @@ export default function Contact() {
                       </a>
                     </div>
                   )}
+
                   <div className="flex items-center gap-2.5">
                     <MapPin className="h-4 w-4 text-kgp-blue dark:text-kgp-gold" />
                     <span>{contact.location}</span>
@@ -119,7 +132,7 @@ export default function Contact() {
             </div>
           ))}
 
-          {/* 2. Custom 24/7 Card redesigned to match perfectly */}
+          {/* 2. Custom 24/7 Card containing only emergency contacts */}
           {(activeCategory === 'All' || activeCategory === 'Emergency & Medical') && (
             <div className="p-6 bg-white dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200/60 dark:border-slate-800/40 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between hover:-translate-y-0.5">
               <div>
@@ -127,23 +140,24 @@ export default function Contact() {
                   <div className="p-2.5 bg-slate-50 dark:bg-slate-800 rounded-xl">
                     <ShieldAlert className="h-4.5 w-4.5 text-rose-500" />
                   </div>
+
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
                     24/7 Hotline
                   </span>
                 </div>
 
-                {/* Text triggers Red Hover state exclusively */}
                 <h3 className="font-display font-extrabold text-lg text-slate-900 dark:text-white mb-4 hover:text-rose-600 dark:hover:text-rose-400 transition-colors duration-200 cursor-default inline-block">
                   24/7 Emergency Contacts
                 </h3>
 
-                {/* Landline Directory layout */}
+                {/* Landlines directory layout */}
                 <div className="space-y-3.5 text-sm font-normal text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50 pt-4">
                   {emergencyLandlines.map((item, i) => (
                     <div key={i} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 pb-1">
                       <span className="font-semibold text-slate-700 dark:text-slate-300 text-xs">
                         {item.label}:
                       </span>
+
                       <div className="flex flex-wrap gap-1 sm:justify-end text-slate-500 dark:text-slate-400 font-medium text-xs">
                         {item.numbers.map((num, idx) => (
                           <React.Fragment key={idx}>
@@ -154,6 +168,7 @@ export default function Contact() {
                           </React.Fragment>
                         ))}
                       </div>
+                      
                     </div>
                   ))}
                 </div>
@@ -161,21 +176,10 @@ export default function Contact() {
             </div>
           )}
 
-          {/* Empty State Guard */}
-          {filteredContacts.length === 0 && activeCategory === 'Student Council' && (
-            <div className="col-span-full text-center py-16 bg-white dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-3xl max-w-md mx-auto">
-              <PhoneCall className="h-10 w-10 text-slate-400 mx-auto mb-3" />
-              <h3 className="font-display font-bold text-slate-900 dark:text-white mb-1">
-                No Contacts Found
-              </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                No entries match this category selection.
-              </p>
-            </div>
-          )}
         </div>
 
       </div>
     </div>
   );
+  //************************************************************************************/
 }

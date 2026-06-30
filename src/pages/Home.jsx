@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { campusHighlights, clubsData, testimonialsData } from '../data/mockData';
-import { Sun, Moon } from 'lucide-react';
+import { campusHighlights, clubsData, welcomeData } from '../data/mockData';
 
 export default function Home() {
-  // Use a global window property to track if the splash ran during this active JS session execution
+  // Using a global window property to ensure landing page loads only once when a user arrives on website
   // A browser reload completely wipes window custom properties, meaning it will show again on refresh!
   const isSplashSeen = typeof window !== 'undefined' && window.__splashSeen === true;
 
-  // Splash Screen States initialization
+  //Landing/Splash page states initialization
   const [showLogoText, setShowLogoText] = useState(isSplashSeen);
   const [dismissSplash, setDismissSplash] = useState(isSplashSeen);
   const [destroySplash, setDestroySplash] = useState(isSplashSeen);
@@ -15,15 +14,16 @@ export default function Home() {
   // Custom transparent logo url processed on client side
   const [logoUrl, setLogoUrl] = useState('/kgp-logo.png');
 
-  // Selected Club for Popup/Modal
+  // Selected club for club popup card 
   const [selectedClub, setSelectedClub] = useState(null);
 
-  // Active Category Filter for Clubs Grid
+  // Active category filter for clubs grid to show the list of all clubs and socities
   const [activeCategory, setActiveCategory] = useState('All');
   
+  //Socities and club categories
   const categories = ['All', 'Technical', 'Cultural', 'Welfare', 'Sports'];
 
-  // Hero Section Background Slideshow Images
+  // Hero Section Background Slideshow images object :
   const heroBackgrounds = [
     '/mainbuilding.jpg',
     '/clocktower.jpg',
@@ -32,7 +32,7 @@ export default function Home() {
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-  // Explicit mapping for the 4 public folder assets for Campus Pulse section
+  // Campus Pulse section card images : 
   const campusImages = [
     '/tsg.avif',
     '/halls.png',
@@ -40,17 +40,17 @@ export default function Home() {
     '/illu.png'
   ];
 
-  // Map backend categories to display categories
+  // Mapping categories to display categories
   const mapCategory = (category) => {
-    if (category === 'Social Service') return 'Welfare & Social';
     return category;
   };
 
+  //Filtering the clubs as per the category button selected above
   const filteredClubs = activeCategory === 'All'
     ? clubsData
     : clubsData.filter(club => mapCategory(club.category) === activeCategory);
 
-  // Background Loop Timer (Changes every 2.75 seconds)
+  // Hero section background image loop which changes every 2.75 secs
   useEffect(() => {
     const bgTimer = setInterval(() => {
       setCurrentBgIndex((prevIndex) => (prevIndex + 1) % heroBackgrounds.length);
@@ -59,7 +59,7 @@ export default function Home() {
     return () => clearInterval(bgTimer);
   }, [heroBackgrounds.length]);
 
-  // Process logo background on load
+  //Landing page KGP-Logo adjustments
   useEffect(() => {
     const img = new Image();
     img.src = '/kgp-logo.png';
@@ -86,17 +86,18 @@ export default function Home() {
         ctx.putImageData(imgData, 0, 0);
         setLogoUrl(canvas.toDataURL());
       } catch (err) {
-        console.error('Failed to make logo transparent:', err);
+        console.error('ERROR', err);
       }
     };
   }, []);
 
-  // Splash Screen Timing Sequence
+  // Splash Screen Timing Sequence - remains for only 4.5 secs on the screen
   useEffect(() => {
-    if (isSplashSeen) return; // Completely skip if navigating internally without reload
+    if (isSplashSeen) return; // Completely skiping if the site is already opened
 
     document.body.style.overflow = 'hidden';
 
+    //Logo appears after 0.5 secs of loading the landing page
     const logoTextTimer = setTimeout(() => {
       setShowLogoText(true);
     }, 500);
@@ -104,7 +105,8 @@ export default function Home() {
     const fadeOutTimer = setTimeout(() => {
       setDismissSplash(true);
       document.body.style.overflow = 'auto';
-      // Set the global window flag so it survives router changes but resets on refresh
+
+      // Setting the global window flag so it survives router changes but resets on refresh
       if (typeof window !== 'undefined') {
         window.__splashSeen = true;
       }
@@ -133,7 +135,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 grid-bg pb-16">
       
-      {/* ================= SPLASH INTRO OVERLAY ================= */}
+      {/************************ LANDING PAGE (ONLY ONCE) **************************/}
       {!destroySplash && (
         <div
           className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-700 ease-out select-none ${
@@ -184,10 +186,12 @@ export default function Home() {
                style={{ width: dismissSplash ? '100%' : '0%' }}></div>
         </div>
       )}
+      {/***********************************************************************************/}
 
-      {/* ================= HOME HERO BANNER ================= */}
+      {/****************************** HOME HERO BANNER ******************************/}
       <section className="relative overflow-hidden py-20 md:py-28 lg:py-32 border-b border-slate-200/50 dark:border-slate-800/40">
         <div className="absolute inset-0 z-0 pointer-events-none select-none">
+          {/* BG Image looping */}
           {heroBackgrounds.map((bgUrl, index) => (
             <div
               key={bgUrl}
@@ -212,7 +216,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <button
               onClick={() => handleSmoothScroll('campus-life')}
-              className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-kgp-blue hover:bg-kgp-blue/90 text-white dark:bg-kgp-gold dark:hover:bg-kgp-gold/90 dark:text-kgp-blue shadow-md transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+              className="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-850 shadow-sm transition-all duration-200 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
             >
               Campus
             </button>
@@ -231,8 +235,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/***********************************************************************************/}
 
-      {/* ================= CAMPUS PILLARS SECTION ================= */}
+      {/**************************** CAMPUS PILLARS SECTION ******************************/}
       <section id="campus-life" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white">
@@ -245,6 +250,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 gap-8">
+          {/* Campus card images and description mapping */}
           {campusHighlights.map((highlight, index) => (
             <div
               key={highlight.id}
@@ -260,9 +266,6 @@ export default function Home() {
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                <div className="absolute inset-0 hidden items-center justify-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-600 p-4 text-center">
-                  [ {highlight.title} Graphic ]
-                </div>
               </div>
 
               <div className="w-full md:w-3/5 p-6 sm:p-8 flex flex-col justify-center text-left">
@@ -277,8 +280,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/***********************************************************************************/}
 
-      {/* ================= CLUBS & SOCIETIES SECTION ================= */}
+      {/************************* CLUBS & SOCIETIES SECTION *******************************/}
       <section id="clubs-grid" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white">
@@ -291,6 +295,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-1.5 mb-8">
+          {/* Clubs card mapping as per category */}
           {categories.map((category) => (
             <button
               key={category}
@@ -307,6 +312,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {/* Individual socirty card logo mapping */}
           {filteredClubs.map((club, idx) => (
             <div
               key={idx}
@@ -314,15 +320,11 @@ export default function Home() {
               className="p-4 bg-white dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200/60 dark:border-slate-800/40 rounded-2xl hover:border-kgp-blue dark:hover:border-kgp-gold hover:shadow-md cursor-pointer transition-all duration-250 flex flex-col items-center text-center justify-center gap-3.5 group hover:-translate-y-0.5"
             >
               <div className="h-14 w-14 rounded-2xl bg-slate-50 dark:bg-slate-800 text-kgp-blue dark:text-kgp-gold font-display font-extrabold flex items-center justify-center text-xs shadow-inner group-hover:scale-105 transition-transform duration-250 overflow-hidden">
-                {club.logoImg ? (
-                  <img 
+                <img 
                     src={club.logoImg} 
                     alt={`${club.name} logo`} 
                     className="w-full h-full object-cover"
-                  />
-                ) : (
-                  club.logoText
-                )}
+                />
               </div>
 
               <h4 className="font-display font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 group-hover:text-kgp-blue dark:group-hover:text-kgp-gold transition-colors duration-200 leading-snug">
@@ -336,8 +338,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/***********************************************************************************/}
 
-      {/* ================= CLUB DETAIL POPUP MODAL ================= */}
+      {/***************************** CLUB DETAIL POPUP CARDS *****************************/}
       {selectedClub && (
         <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
           <div
@@ -348,17 +351,15 @@ export default function Home() {
           <div className="relative z-10 w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl p-6 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             <div className="flex justify-between items-start mb-4">
               <div className="flex items-center gap-3">
+
                 <div className="h-10 w-10 rounded-xl bg-slate-50 dark:bg-slate-800 text-kgp-blue dark:text-kgp-gold font-display font-extrabold flex items-center justify-center text-xs shadow-inner overflow-hidden">
-                  {selectedClub.logoImg ? (
-                    <img 
+                  <img 
                       src={selectedClub.logoImg} 
                       alt={`${selectedClub.name} logo`} 
                       className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    selectedClub.logoText
-                  )}
+                  />
                 </div>
+
                 <div>
                   <h3 className="font-display font-extrabold text-base sm:text-lg text-slate-900 dark:text-white leading-tight">
                     {selectedClub.name}
@@ -367,6 +368,7 @@ export default function Home() {
                     {mapCategory(selectedClub.category)}
                   </span>
                 </div>
+
               </div>
             </div>
 
@@ -389,12 +391,15 @@ export default function Home() {
                 Close
               </button>
             </div>
+
           </div>
         </div>
       )}
+      {/***********************************************************************************/}
 
-      {/* ================= TESTIMONIALS SECTION ================= */}
+      {/******************************* WELCOME MSGS **************************************/}
       <section id="welcome-messages" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200/50 dark:border-slate-800/40 scroll-mt-16">
+        
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white">
             Welcome Messages
@@ -403,7 +408,8 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonialsData.map((t) => (
+          {/* Welcome msgs mapping */}
+          {welcomeData.map((t) => (
             <div
               key={t.id}
               className="relative p-6 bg-white dark:bg-slate-900/60 backdrop-blur-sm border border-slate-200/60 dark:border-slate-800/40 rounded-2xl shadow-sm flex flex-col justify-between"
@@ -411,10 +417,13 @@ export default function Home() {
               <span className="absolute top-2 right-4 text-5xl font-serif text-slate-100 dark:text-slate-850 select-none">
                 “
               </span>
+
               <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-350 leading-relaxed italic z-10 mb-6 font-normal">
                 "{t.quote}"
               </p>
+
               <div className="flex items-center gap-3">
+
                 <div className="h-9 w-9 rounded-full overflow-hidden bg-kgp-blue dark:bg-kgp-gold flex items-center justify-center p-1">
                   <img 
                     src="/iitkgp.png" 
@@ -422,6 +431,7 @@ export default function Home() {
                     className="h-full w-full object-contain" 
                   />
                 </div>
+
                 <div>
                   <h5 className="font-display font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
                     {t.name}
@@ -430,11 +440,13 @@ export default function Home() {
                     {t.role}
                   </p>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
       </section>
+      {/***********************************************************************************/}
 
     </div>
   );

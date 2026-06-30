@@ -11,9 +11,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
-          {/* Logo & Gymkhana Info (GraduationCap replaced with kgp-logo.png) */}
+          {/************************* Logo & Gymkhana Info ***************************/}
           <div className="col-span-1 md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-2">
+              
               <div className="bg-transparent p-1">
                 <img 
                   src="/kgp-logo.png" 
@@ -21,23 +22,27 @@ export default function Footer() {
                   className="h-8 w-8 object-contain" 
                 />
               </div>
+
               <span className="font-display font-extrabold text-xl tracking-tight text-kgp-blue dark:text-kgp-gold">
                 IIT KGP Induction Portal
               </span>
+
             </Link>
+
             <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm">
-              Technology Students' Gymkhana (TSG) is the governing body for student activities at IIT Kharagpur. Welcome to your campus life!
+              Technology Students' Gymkhana extends a very warm welcome to all the freshers into their campus life!
             </p>
+
             <div className="space-y-2 pt-2 text-sm text-slate-500 dark:text-slate-400">
               <div className="flex items-center gap-2">
-                {/* PLACEHOLDER: Map Pin Icon */}
+                {/*** PLACEHOLDER: Map  Icon ***/}
                 <img src="" alt="" className="h-4 w-4 object-contain empty:hidden" />
                 <span>Gymkhana Office, IIT Kharagpur, West Bengal, 721302</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/**************************** Quick Links ***************************/}
           <div>
             <h3 className="font-display font-bold text-sm text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">
               Quick Navigation
@@ -61,7 +66,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/******************** Links to other important IIT KGP's websites ********************/}
           <div>
             <h3 className="font-display font-bold text-sm text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">
               Official Portals
@@ -96,14 +101,17 @@ export default function Footer() {
           <div>
             &copy; {new Date().getFullYear()} Technology Students' Gymkhana, IIT Kharagpur. All rights reserved.
           </div>
+
+          {/************ Back to Top Button *************/}
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:text-kgp-blue hover:bg-slate-100 dark:hover:text-kgp-gold dark:hover:bg-slate-800 transition-all duration-200"
           >
             <span>Back to Top</span>
-            {/* PLACEHOLDER: Arrow Up Icon */}
+            {/*** PLACEHOLDER: Arrow Up Icon ***/}
             <img src="" alt="" className="h-3 w-3 object-contain empty:hidden" />
           </button>
+
         </div>
       </div>
     </footer>

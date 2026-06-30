@@ -1,3 +1,4 @@
+//Campus Highlights Data
 export const campusHighlights = [
   {
     id: 'tsg',
@@ -33,13 +34,13 @@ export const campusHighlights = [
   }
 ];
 
+//Socities pop-up card details
 export const clubsData = [
   // Technical
   {
     name: 'Kharagpur Open Source Society (KOSS)',
     description: "The Kharagpur Open Source Society (KOSS) is a community of open source enthusiasts atIIT Kharagpur. We collaborate on innovative open source projects, applying cutting-edge solutions to real-world problems. The community promotes knowledge-sharing and personal growth in a supportive and engaging environment. You can find involvement of KOSS members in MetaKGP, developing on a project  which is helpful for the KGP Community. We are known for conducting technical workshops for sharing knowledge about useful software practices, such as git, python, shell script, linux installation fest.",
     category: 'Technical',
-    logoText: 'KOSS',
     logoImg: '/koss-logo.jpg',
     tags: ['Development', 'Open Source', 'Software']
   },
@@ -47,7 +48,6 @@ export const clubsData = [
     name: 'Computer Graphics Society',
     description: "CGS at IIT Kharagpur focuses on research in graphics and game development, working on everything from 2D/3D games and VFX to short films and animations, blending creativity with technical expertise. Members explore cutting-edge technologies such as AR/VR, real-time rendering, shader programming, blockchain gaming, and computer vision, often integrating AI/ML workflows into their projects. CGS also organizes Game Jams, workshops, and technical sessions to encourage hands-on learning and collaboration.",
     category: 'Technical',
-    logoText: 'CGS',
     logoImg: '/cgs-logo.jpg',
     tags: ['Robotics', 'AI', 'Self-Driving']
   },
@@ -55,7 +55,6 @@ export const clubsData = [
     name: 'Kharagpur Data Analytics Group',
     description: "The Kharagpur Data Analytics Group is a vibrant society fueled by passionate data enthusiasts dedicated to advancing the field of data  analytics. Our mission is to share knowledge and expertise in machine learning, artificial intelligence, and data analytics across the entire campus. We achieve this through engaging workshops, exciting hackathons, and by providing valuable resources that empower individuals in the realms of data science and machine learning. The group also collaborates on research-driven projects and publishes technical blogs to encourage continuous learning.",
     category: 'Technical',
-    logoText: 'KDAG',
     logoImg: '/kdag-logo.jpg',
     tags: ['Finance', 'Consulting', 'Case Study']
   },
@@ -63,7 +62,6 @@ export const clubsData = [
     name: 'Kodein KGP',
     description: "Technology Web3.0 Society is a student-driven tech society at IIT Kharagpur dedicated to solving real-world problems within the campus community using modern technologies. Open to undergraduate freshers and sophomores through a structured selection process, the society is organized into five focused teams: Tech, AI & Metaverse, Blockchain, Design & Media, and Events. KodeinKGP regularly conducts workshops, coding challenges, and design events that promote hands-on learning across domains like AI, Web2.0, Web3.0, Blockchain and UI/UX. Among its many initiatives, the most recent was decodeX, a 10-day open-to-all coding challenge that saw enthusiastic participation from students across multiple institutions.",
     category: 'Technical',
-    logoText: 'KIK',
     logoImg: '/kik-logo.jpg',
     tags: ['Aerospace', 'Engineering', 'Satellites']
   },
@@ -72,7 +70,6 @@ export const clubsData = [
     name: 'Pravah',
     description: "Pravah is the official Dramatics Society of IIT Kharagpur and comes under the Technology Students’ Gymkhana. It is one of the oldest societies founded in the year 1967. Since its inception, Pravah has successfully brought the true spirit of theatre to life and demonstrated the power of emotions and thoughts through its stage plays and nukkad nataks (Street Plays). Major events organized by Pravah are as follows: Introductory Seminar (Welcome Production), Fresher’s Workshop, Fresher’s Production(It is the first act performed by the freshers.",
     category: 'Cultural',
-    logoText: 'Pravah',
     logoImg: '/pravah-logo.jpg',
     tags: ['Filmmaking', 'Screening', 'Media']
   },
@@ -80,7 +77,6 @@ export const clubsData = [
     name: 'BreakFree',
     description: "Breakfree: Technology Dance Society is the official dance society of IIT Kharagpur, home to a vibrant community of passionate dancers. They have been representing the institute at Inter IIT Cultural Meets and consistently bring energy and charisma to the stages of the campus’s cultural festivals. With a strong focus on Western dance styles like hiphop, contemporary, and urban, Breakfree is all about pushing limits and showcasing power-packed performances.",
     category: 'Cultural',
-    logoText: 'BreakFree',
     logoImg: '/bf-logo.jpg',
     tags: ['Dance', 'Choreography', 'Performances']
   },
@@ -88,7 +84,6 @@ export const clubsData = [
     name: 'Comedy Club',
     description: "Comedy Club is a group of comedy enthusiasts aimed to develop students' skills in and around humor such as communication,  spontaneity, people management, and much more. It organizes various workshops and talks in association with comedians on comedy, stand up writing, and performance. Popular Events like open mics, standup, and comedy nights conducted by Comedy Club have been the most liked element among the KGP fraternity since the beginning.",
     category: 'Cultural',
-    logoText: 'TCS',
     logoImg: '/comc-logo.jpg',
     tags: ['Music', 'Vocal', 'Instruments']
   },
@@ -96,7 +91,6 @@ export const clubsData = [
     name: 'Technology Literary Society',
     description: "The Technology Literature Society (TLS) of IIT Kharagpur is one of the institute’s oldest and most cherished cultural societies, with its origins tracing back as early as 1957 or 1958—though its exact founding year remains a mystery lost to time. Serving as a tranquil haven amid the academic and extracurricular hustle of campus life, TLS is dedicated to fostering a love for literature, with a special emphasis on both Hindi and English literary traditions. The society regularly organizes flagship events such as Kavyasandhya, a celebration of performative Hindi poetry; Farrago, its English counterpart; and its most prestigious event, Kavyanjali, which features renowned poets from across India who grace the campus with their literary masterpieces.",
     category: 'Cultural',
-    logoText: 'TLS',
     logoImg: '/tls-logo.jpg',
     tags: ['Dramatics', 'Theatre', 'Nukkad']
   },
@@ -105,7 +99,6 @@ export const clubsData = [
     name: 'Student Welfare Group',
     description: "The Student Welfare Group, under the Office of the Dean of Students’ Affairs at IIT Kharagpur, is a student-led body committed to supporting fellow students in all aspects of their lives—academic, personal, and emotional. Founded with the vision of creating a more fulfilling campus experience, it operates with the spirit of being of the students, by the students, and for the students. The group aims to foster a supportive environment that promotes emotional well-being, personal growth, and a strong sense of belonging.",
     category: 'Welfare',
-    logoText: 'SWG',
     logoImg: '/swg-logo.jpg',
     tags: ['NGO', 'Education', 'Social Work']
   },
@@ -113,7 +106,6 @@ export const clubsData = [
     name: 'Institute Wellness Group',
     description: "The Institute Wellness Group consists of trained students who are responsible for conducting welfare activities among the student community and act as primary nodes of mature student counselling. From using the power of social media to spread mental health awareness, to organising the mega-event that is Khat - each activity, each initiative, each event is a part of the overarching mission to make the campus an inclusive, vibrant, and nurturing place for everyone",
     category: 'Welfare',
-    logoText: 'IWG',
     logoImg: '/iwg-logo.jpg',
     tags: ['Community', 'Service', 'Green Campus']
   },
@@ -121,7 +113,6 @@ export const clubsData = [
     name: 'Technology Environment Society',
     description: "The Technology Environment Society (TES) is a student-led organization under the Technology Students' Gymkhana (TSG) focused on driving campus sustainability and ecological awareness at IIT Kharagpur. Originating from a grassroots group called Vision Prabaho in 2018 and officially recognized under TSG in 2021, the society works on actionable solutions like solid waste management and rainwater harvesting, while engaging the campus through eco-themed events and treasure hunts.",
     category: 'Welfare',
-    logoText: 'TES',
     logoImg: '/tes-logo.jpg',
     tags: ['Community', 'Service', 'Green Campus']
   },
@@ -129,7 +120,6 @@ export const clubsData = [
     name: 'Think India IIT Kharagpur',
     description: "Think India IIT KGP operates as a prominent student forum and think-tank chapter that aligns institutional technical talent with national development, governance awareness, and social impact. Part of a national pan-IIT/IIM network, the forum hosts impactful socio-entrepreneurial case studies and national business plan competitions like Udgam, which challenges students to build scalable solutions for real-world social problems.",
     category: 'Welfare',
-    logoText: 'ThinkIndia',
     logoImg: '/ti-logo.jpg',
   },
   // Sports
@@ -137,19 +127,17 @@ export const clubsData = [
     name: 'Technology Adventure Society',
     description: "Founded in 2008, Technology Adventure Society (TAdS) aims to ignite the spirit of adventure in young minds through thrilling experiences like mountaineering, rock climbing, mountain biking and more. We host events such as cycle trip, rappelling, ziplining and adventure weekends packed with paintball, go karting and laser tag. With all logistics, equipment, and technical support handled, all you need is the will to take the leap. At TAdS, we believe adventure is for doers, not viewers—so let the journey begin!",
     category: 'Sports',
-    logoText: 'TADS',
     logoImg: '/tads-logo.jpg',
   },
-  // Social
   {
     name: 'Chess Club',
     description: "Chess Club at IIT Kharagpur is an active and inclusive community of chess enthusiasts, open to all students regardless of skill level. The club is dedicated to fostering a strong chess culture on campus, encouraging strategic thinking, focus, and friendly competition. It regularly organizes a variety of events including Freshers’ Tournaments, the institute-wide Open IIT Chess Tournament, and collaborative events like the Quarantine Chess Tour (QCT)—a combined online tournament with participation from all IITs. The club has also hosted major events such as the U-21 National Chess League, a one-time sponsored tournament that drew attention from players across the country",
     category: 'Sports',
-    logoText: 'ChessClub',
     logoImg: '/chess.jpg',
   },
 ];
 
+//FAQs Questions & Answers
 export const faqsData = [
   {
     id: 1,
@@ -193,6 +181,7 @@ export const faqsData = [
   },
 ];
 
+//Contact details
 export const contactsData = [
   {
     name: "Rajas Sangekar",
@@ -243,7 +232,8 @@ export const contactsData = [
   },
 ];
 
-export const testimonialsData = [
+//Welcome msgs data
+export const welcomeData = [
   {
     id: 1,
     name: "Prof. Suman Chakraborty",
@@ -258,7 +248,7 @@ export const testimonialsData = [
   },
   {
     id: 3,
-    name: "CAPT. Amit Jain",
+    name: "Capt. Amit Jain",
     role: "Registrar",
     quote: "Dear Freshers, As the Registrar of IIT Kharagpur, it's my distinct pleasure to welcome you to our vibrant campus! You're embarking on an exciting chapter of your lives, and we're thrilled to have you join the KGP family. IIT Kharagpur is a place of immense possibilities. Beyond the academic rigors, you'll find a rich tapestry of research opportunities, cutting-edge laboratories, diverse student organizations, sports facilities, cultural groups, and entrepreneurial support systems. Whether your passion lies in technology, the arts, sports, or community service, KGP offers a platform for you to explore, learn, and grow.",
   }
