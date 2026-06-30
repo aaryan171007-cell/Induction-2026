@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { campusHighlights, clubsData, welcomeData } from '../data/mockData';
-import museumBg from '/kgp-nehru-museum.jpg';
 
 export default function Home() {
   // Using a global window property to ensure landing page loads only once when a user arrives on website
@@ -26,19 +25,19 @@ export default function Home() {
 
   // Hero Section Background Slideshow images:
   const heroBackgrounds = [
-    './mainbuilding.jpg',
-    './clocktower.jpg',
-    './adda.jpg',
-    './stadium.png'
+    '/mainbuilding.jpg',
+    '/clocktower.jpg',
+    '/adda.jpg',
+    '/stadium.png'
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   // Campus Pulse section card images : 
   const campusImages = [
-    './tsg.avif',
-    './halls.png',
-    './fest.jpg',
-    './illu.png'
+    '/tsg.avif',
+    '/halls.png',
+    '/fest.jpg',
+    '/illu.png'
   ];
 
   // Mapping categories to display categories
@@ -63,7 +62,7 @@ export default function Home() {
   //Landing page KGP-Logo adjustments
   useEffect(() => {
     const img = new Image();
-    img.src = './kgp-logo.png';
+    img.src = '/kgp-logo.png';
     img.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = img.width;
@@ -143,7 +142,7 @@ export default function Home() {
             dismissSplash ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: `url(${museumBg})`,
+            backgroundImage: 'url(/kgp-nehru-museum.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -427,7 +426,7 @@ export default function Home() {
 
                 <div className="h-9 w-9 rounded-full overflow-hidden bg-kgp-blue dark:bg-kgp-gold flex items-center justify-center p-1">
                   <img 
-                    src="./iitkgp.png" 
+                    src="/iitkgp.png" 
                     alt={t.name} 
                     className="h-full w-full object-contain" 
                   />

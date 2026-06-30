@@ -52,7 +52,7 @@ export default function Navbar() {
             {/********* 75 Years Logo *********/}
             <div className="bg-transparent p-1">
               <img 
-                src="./75logo.png" 
+                src="/75logo.png" 
                 alt="75 Years Logo" 
                 className="h-8 w-auto object-contain" 
               />
@@ -60,7 +60,7 @@ export default function Navbar() {
             {/********* IIT KGP Logo **********/}
             <div className="bg-transparent p-1 transition-all duration-300 group-hover:rotate-12">
               <img 
-                src="./kgp-logo.png" 
+                src="/kgp-logo.png" 
                 alt="IIT KGP Logo" 
                 className="h-8 w-8 object-contain pointer-events-none" 
               />
