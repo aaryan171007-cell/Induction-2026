@@ -17,7 +17,7 @@ export default function Footer() {
               
               <div className="bg-transparent p-1">
                 <img 
-                  src="/Induction-2026/kgp-logo.png" 
+                  src="kgp-logo.png" 
                   alt="IIT KGP Logo" 
                   className="h-8 w-8 object-contain" 
                 />
