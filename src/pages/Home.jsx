@@ -12,7 +12,7 @@ export default function Home() {
   const [destroySplash, setDestroySplash] = useState(isSplashSeen);
   
   //logo url processed on client side
-  const [logoUrl, setLogoUrl] = useState('./kgp-logo.png');
+  const [logoUrl, setLogoUrl] = useState('/Induction-2026/kgp-logo.png');
 
   //Selected club for club popup card 
   const [selectedClub, setSelectedClub] = useState(null);
@@ -25,19 +25,19 @@ export default function Home() {
 
   // Hero Section Background Slideshow images:
   const heroBackgrounds = [
-    '/mainbuilding.jpg',
-    '/clocktower.jpg',
-    '/adda.jpg',
-    '/stadium.png'
+    '/Induction-2026/mainbuilding.jpg',
+    '/Induction-2026/clocktower.jpg',
+    '/Induction-2026/adda.jpg',
+    '/Induction-2026/stadium.png'
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   // Campus Pulse section card images : 
   const campusImages = [
-    '/tsg.avif',
-    '/halls.png',
-    '/fest.jpg',
-    '/illu.png'
+    '/Induction-2026/tsg.avif',
+    '/Induction-2026/halls.png',
+    '/Induction-2026/fest.jpg',
+    '/Induction-2026/illu.png'
   ];
 
   // Mapping categories to display categories
@@ -62,7 +62,7 @@ export default function Home() {
   //Landing page KGP-Logo adjustments
   useEffect(() => {
     const img = new Image();
-    img.src = '/kgp-logo.png';
+    img.src = '/Induction-2026/kgp-logo.png';
     img.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = img.width;
@@ -142,7 +142,7 @@ export default function Home() {
             dismissSplash ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
-            backgroundImage: 'url(/kgp-nehru-museum.jpg)',
+            backgroundImage: 'url(/Induction-2026/kgp-nehru-museum.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -426,7 +426,7 @@ export default function Home() {
 
                 <div className="h-9 w-9 rounded-full overflow-hidden bg-kgp-blue dark:bg-kgp-gold flex items-center justify-center p-1">
                   <img 
-                    src="/iitkgp.png" 
+                    src="/Induction-2026/iitkgp.png" 
                     alt={t.name} 
                     className="h-full w-full object-contain" 
                   />
