@@ -12,7 +12,7 @@ export default function Home() {
   const [destroySplash, setDestroySplash] = useState(isSplashSeen);
   
   //logo url processed on client side
-  const [logoUrl, setLogoUrl] = useState('/kgp-logo.png');
+  const [logoUrl, setLogoUrl] = useState('./kgp-logo.png');
 
   //Selected club for club popup card 
   const [selectedClub, setSelectedClub] = useState(null);
@@ -25,19 +25,19 @@ export default function Home() {
 
   // Hero Section Background Slideshow images:
   const heroBackgrounds = [
-    '/mainbuilding.jpg',
-    '/clocktower.jpg',
-    '/adda.jpg',
-    '/stadium.png'
+    './mainbuilding.jpg',
+    './clocktower.jpg',
+    './adda.jpg',
+    './stadium.png'
   ];
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
   // Campus Pulse section card images : 
   const campusImages = [
-    '/tsg.avif',
-    '/halls.png',
-    '/fest.jpg',
-    '/illu.png'
+    './tsg.avif',
+    './halls.png',
+    './fest.jpg',
+    './illu.png'
   ];
 
   // Mapping categories to display categories
@@ -62,7 +62,7 @@ export default function Home() {
   //Landing page KGP-Logo adjustments
   useEffect(() => {
     const img = new Image();
-    img.src = '/kgp-logo.png';
+    img.src = './kgp-logo.png';
     img.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = img.width;
@@ -426,7 +426,7 @@ export default function Home() {
 
                 <div className="h-9 w-9 rounded-full overflow-hidden bg-kgp-blue dark:bg-kgp-gold flex items-center justify-center p-1">
                   <img 
-                    src="/iitkgp.png" 
+                    src="./iitkgp.png" 
                     alt={t.name} 
                     className="h-full w-full object-contain" 
                   />
